@@ -31,7 +31,7 @@ node {
          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'
            
                
-            app.push("${env.cc9e1c5b5465}")
+            
             app.push("latest")
         
     }
