@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("your-git-id/your-git-repo")
+        app = docker.build("your-git-id/your-git-repo:${env.BUILD_NUMBER}")
     }
 
     stage('Test image') {
@@ -30,8 +30,8 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials')
            
-                  this.app.inside("${env.BUILD_NUMBER}")
-            this.app.inside("latest")   
+                  app.push("${env.BUILD_NUMBER}")
+            app.push("latest")   
             
         
     }
