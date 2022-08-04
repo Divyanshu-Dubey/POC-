@@ -22,6 +22,11 @@ node {
             sh 'echo "Tests passed"'
         }
     }
+    {
+  "ServerURL": "https://index.docker.io/v1",
+  "Username": "token",
+  "Secret": "dckr_pat_F6sMmVLBqvskCmsK0yYQhnGUaXw"
+}
 
     stage('Push image') {
         /* Finally, we'll push the image with two tags:
