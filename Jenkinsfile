@@ -23,9 +23,9 @@ node {
         }
     }
     {
-  "ServerURL": "https://index.docker.io/v1",
-  "Username": "token",
-  "Secret": "dckr_pat_F6sMmVLBqvskCmsK0yYQhnGUaXw"
+  ServerURL: "https://index.docker.io/v1",
+  Username: "token",
+  Secret: "dckr_pat_F6sMmVLBqvskCmsK0yYQhnGUaXw"
 }
 
     stage('Push image') {
