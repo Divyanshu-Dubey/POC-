@@ -30,9 +30,9 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'
            
-               
+                  dockerImage.push("${env.BUILD_NUMBER}")
+            dockerImage.push("latest")   
             
-            app.push("latest")
         
     }
 }
