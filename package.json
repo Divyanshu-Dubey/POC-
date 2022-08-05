@@ -17,9 +17,5 @@
     "dockerfile"
   ],
     "license": "ISC"
-  "login": {
-  "ServerURL": "https://index.docker.io/v1",
-  "Username": "divyanshudubey",
-  "Secret": "Kanpur@111"
-}
+ 
 }
