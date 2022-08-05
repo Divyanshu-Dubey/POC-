@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build -t ("your-git-id/your-git-repo":latest)
+        app = docker.build -t ("your-git-id/your-git-repo"):latest
     }
 
     stage('Test image') {
