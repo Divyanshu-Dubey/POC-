@@ -31,10 +31,10 @@ node {
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
 		    
 			    
-			//	    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+			//	    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) 
     // some block
 		//   sh 'docker login -u divyanshudubey -p ${dockerhubpwd}'
-}
+
 		    {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
