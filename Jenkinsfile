@@ -24,7 +24,7 @@ node {
         }
     }
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-dubey')
 	}
 
 
