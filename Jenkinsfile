@@ -23,7 +23,14 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-   
+   stage('Login') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+
+
 
     stage('Push image') {
         /* Finally, we'll push the image with two tags:
@@ -38,4 +45,9 @@ node {
             app.push("latest")
         }
     }
+    post {
+		always {
+			sh 'docker logout'
+		}
+	}
 }
