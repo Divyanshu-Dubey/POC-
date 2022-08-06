@@ -33,7 +33,7 @@ node {
 			    script{
            withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
     // some block
-		   sh 'docker login -u divyanshudubey -p ${dockerhubpwd}
+		   sh 'docker login -u divyanshudubey -p ${dockerhubpwd}'
 }
 		    {
             app.push("${env.BUILD_NUMBER}")
