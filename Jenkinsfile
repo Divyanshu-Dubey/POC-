@@ -31,7 +31,7 @@ node {
    //   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
 		    
 			    script {
-           withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+				    'login': { withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')])} {
     // some block
 		   sh 'docker login -u divyanshudubey -p ${dockerhubpwd}'
 }
