@@ -31,11 +31,11 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
-        def sapp = docker.build("my-image:${env.BUILD_ID}"){
+        {
            
                
-            sapp.push("${env.BUILD_NUMBER}")
-            sapp.push("latest")
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
         }
     }
 }
