@@ -12,6 +12,7 @@ node {
          * docker build on the command line */
 
         app = docker.build ("your-git-id/your-git-repo")
+        
     }
 
     stage('Test image') {
@@ -29,8 +30,8 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-      //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
-        sh 'sudo docker login -u "divyanshudubey" -p "Kanpur@111" docker.io'{
+       docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
+        def app = docker.build("my-image:${env.BUILD_ID}"){
            
                
             app.push("${env.BUILD_NUMBER}")
