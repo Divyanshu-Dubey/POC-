@@ -34,8 +34,7 @@ node {
 		
 		    {
           //  app.push("${env.BUILD_NUMBER}")
-            app.push divyanshudubey:latest
-        
+            app.push()         
 		    }}
     
 }
