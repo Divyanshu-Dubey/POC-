@@ -10,9 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        step{
-        sh 'docker build -t divyanshu-dubey/poc:$BUILD_NUMBER .'
-        }
+        app = docker.build("divyanshudubey/poc")
         
     }
 
@@ -33,8 +31,8 @@ node {
          *docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'*/
            sh 'sudo docker login -u "divyanshudubey" -p "dckr_pat_rigRjxiRGgEaVJdPC9XfOJA03DU" docker.io'
                
-        
-        sh 'docker push divyanshu-dubey/poc:$BUILD_NUMBER'
+        app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
         
    
     }
