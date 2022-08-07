@@ -33,9 +33,9 @@ node {
          *docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'*/
            sh 'sudo docker login -u "divyanshudubey" -p "dckr_pat_rigRjxiRGgEaVJdPC9XfOJA03DU" docker.io'
                
-        {
+        
         sh 'docker push divyanshu-dubey/poc:$BUILD_NUMBER'
-        }
+        
    
     }
 }
