@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build -t latest ("your-git-id/your-git-repo")
+        app = docker.build("your-git-id/your-git-repo":latest)
         
     }
 
