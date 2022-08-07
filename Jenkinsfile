@@ -10,8 +10,10 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("divyanshu-dubey/poc")
+        step{
+        sh 'docker build -t divyanshu-dubey/poc:$BUILD_NUMBER .'
+        }
+        
     }
 
     stage('Test image') {
@@ -29,11 +31,11 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. 
          *docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'*/
-           sh 'sudo docker login -u "divyanshudubey" -p "Kanpur@111" docker.io'
+           sh 'sudo docker login -u "divyanshudubey" -p "dckr_pat_rigRjxiRGgEaVJdPC9XfOJA03DU" docker.io'
                
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-     
+        {
+        sh 'docker push divyanshu-dubey/poc:$BUILD_NUMBER'
+        }
    
     }
 }
